@@ -18,7 +18,7 @@ a[href*="twitter.com"],
 }
 
 .sider-content {
-  margin-top: -140px !important;
+  margin-top: -130px !important;
 }
 
 /* --- sidebar logo: hide SVG, replace header with our image --- */
@@ -45,6 +45,8 @@ a[href*="twitter.com"],
   background-position: 16px center;
   height: 72px;
   margin-bottom: 0px;
+  padding-top: 0px;
+  margin-left: 40px;
 }
 
 .hero-wrapper .text-wrapper {
@@ -55,4 +57,8 @@ a[href*="twitter.com"],
 a.c-button.circle,
 .c-button.circle {
   display: none !important;
+}
+
+.pt-50px {
+  padding-top: 0 !important;
 }
