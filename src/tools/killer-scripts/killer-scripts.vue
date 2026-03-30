@@ -16,11 +16,9 @@ onMounted(async () => {
     scripts.value = contents
       .filter((f: any) => f.name.endsWith('.ps1'))
       .sort((a: any, b: any) => a.name.localeCompare(b.name));
-  }
-  catch {
+  } catch {
     error.value = true;
-  }
-  finally {
+  } finally {
     loading.value = false;
   }
 });
@@ -36,8 +34,7 @@ async function downloadScript(script: { name: string; download_url: string }) {
     a.download = script.name;
     a.click();
     URL.revokeObjectURL(url);
-  }
-  finally {
+  } finally {
     downloading.value = null;
   }
 }
