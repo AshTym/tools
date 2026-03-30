@@ -2,9 +2,8 @@
    killer-tools custom overrides
    ============================================================ */
 
-/* --- footer, social links, buy me coffee, info button --- */
-.footer,
-.c-link,
+/* --- social links, buy me coffee, info button --- */
+
 .support-button,
 a[href*="buymeacoffee"],
 a[href*="github.com/CorentinTh"],
@@ -86,4 +85,13 @@ a.c-button.circle:not([aria-label="Toggle menu"]),
 
 div:first-child > .menu-wrapper .n-menu-item-content {
   padding-left: 32px !important;
+}
+
+.n-layout-sider,
+.sider-content {
+  overflow-x: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
 }
