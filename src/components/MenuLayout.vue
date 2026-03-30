@@ -12,7 +12,7 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
       bordered
       collapse-mode="width"
       :collapsed-width="0"
-      :width="240"
+      :width="300"
       :collapsed="isMenuCollapsed"
       :show-trigger="false"
       :native-scrollbar="false"
