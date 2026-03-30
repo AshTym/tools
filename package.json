@@ -65,7 +65,7 @@
     "dompurify": "^3.0.6",
     "email-normalizer": "^1.0.0",
     "emojilib": "^3.0.10",
-    "figlet": "^1.9.2",
+    "figlet": "^1.11.0",
     "figue": "^1.2.0",
     "fuse.js": "^6.6.2",
     "highlight.js": "^11.7.0",
@@ -152,8 +152,8 @@
     "zx": "^7.2.1"
   },
   "pnpm": {
-  "overrides": {
-    "@vueuse/shared": "10.11.1"
+    "overrides": {
+      "@vueuse/shared": "10.11.1"
+    }
   }
-}
 }
