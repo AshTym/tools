@@ -41,43 +41,45 @@ async function downloadScript(script: { name: string; download_url: string }) {
 </script>
 
 <template>
-  <c-card>
-    <div mb-4>
-      <p op-70>
-        PowerShell scripts for Windows administration and MSP field work.
-        Source on <a href="https://github.com/SteveTheKiller/killer-scripts" target="_blank" style="color: inherit; text-decoration: underline;">GitHub</a>.
-      </p>
-    </div>
-
-    <div v-if="loading" flex justify-center py-6>
-      <n-spin />
-    </div>
-
-    <n-alert v-else-if="error" type="error" mb-4>
-      Failed to load scripts from GitHub.
-    </n-alert>
-
-    <div v-else flex flex-col gap-3>
-      <div
-        v-for="script in scripts"
-        :key="script.name"
-        flex items-center justify-between gap-4
-        p-3
-        style="border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;"
-      >
-        <div flex flex-col gap-1>
-          <span font-mono font-bold>{{ descriptions[script.name]?.name ?? script.name }}</span>
-          <span op-60 text-sm>{{ descriptions[script.name]?.description ?? '' }}</span>
-        </div>
-        <c-button
-          size="small"
-          style="flex-shrink: 0;"
-          :loading="downloading === script.name"
-          @click="downloadScript(script)"
-        >
-          Download
-        </c-button>
+  <div style="flex: 1 1 900px; max-width: 1200px;">
+    <c-card>
+      <div mb-4>
+        <p op-70>
+          PowerShell scripts for Windows administration and MSP field work.
+          Source on <a href="https://github.com/SteveTheKiller/killer-scripts" target="_blank" style="color: inherit; text-decoration: underline;">GitHub</a>.
+        </p>
       </div>
-    </div>
-  </c-card>
+
+      <div v-if="loading" flex justify-center py-6>
+        <n-spin />
+      </div>
+
+      <n-alert v-else-if="error" type="error" mb-4>
+        Failed to load scripts from GitHub.
+      </n-alert>
+
+      <div v-else flex flex-col gap-3>
+        <div
+          v-for="script in scripts"
+          :key="script.name"
+          flex items-center justify-between gap-4
+          p-3
+          style="border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;"
+        >
+          <div flex flex-col gap-1>
+            <span font-mono font-bold>{{ descriptions[script.name]?.name ?? script.name }}</span>
+            <span op-60 text-sm>{{ descriptions[script.name]?.description ?? '' }}</span>
+          </div>
+          <c-button
+            size="small"
+            style="flex-shrink: 0;"
+            :loading="downloading === script.name"
+            @click="downloadScript(script)"
+          >
+            Download
+          </c-button>
+        </div>
+      </div>
+    </c-card>
+  </div>
 </template>
