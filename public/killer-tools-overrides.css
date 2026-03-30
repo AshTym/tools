@@ -73,3 +73,7 @@ a.c-button.circle,
 .pt-50px {
   padding-top: 0 !important;
 }
+
+.menu-wrapper .n-menu-item-content {
+  padding-left: 8px !important;
+}
