@@ -43,7 +43,14 @@
     <!-- custom overrides: hides IT-Tools branding -->
     <link rel="stylesheet" href="/killer-tools-overrides.css" />
     <script defer src="https://analytics.thekiller.net/script.js" data-website-id="1591e017-baaf-4c59-8c6d-fd43e590a58c"></script>
-  </head>
+  <script>
+    (function () {
+      const redirect = new URLSearchParams(window.location.search).get('redirect');
+      if (redirect) {
+        window.history.replaceState(null, '', redirect);
+      }
+    })();
+  </script>  </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
