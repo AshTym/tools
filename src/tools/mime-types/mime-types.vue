@@ -81,8 +81,8 @@ const mimeTypeFound = computed(() => (selectedExtension.value ? extensionToMimeT
     </div>
   </c-card>
 
-  <div>
-    <n-table>
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <n-table style="min-width: 420px;">
       <thead>
         <tr>
           <th>Mime types</th>

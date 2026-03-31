@@ -122,3 +122,39 @@ function switchToBlock({ count = 1 }: { count?: number }) {
     </div>
   </div>
 </template>
+
+<style scoped>
+.subnet-results {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.subnet-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  align-items: baseline;
+}
+.subnet-row:last-child {
+  border-bottom: none;
+}
+.subnet-label {
+  font-weight: 600;
+  min-width: 180px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+@media (max-width: 480px) {
+  .subnet-label {
+    min-width: 100%;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 0;
+  }
+  .subnet-value {
+    font-family: monospace;
+  }
+}
+</style>
