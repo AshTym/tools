@@ -97,3 +97,25 @@ body {
 .n-layout-sider .n-scrollbar-rail {
   display: none !important;
 }
+
+/* --- mobile overflow fix for pre/code blocks and textareas --- */
+@media (max-width: 768px) {
+  pre {
+    max-width: 100%;
+    overflow-x: auto !important;
+    box-sizing: border-box;
+  }
+
+  .n-card,
+  .c-card {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .n-input__textarea-el,
+  .n-input__input-el {
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+}
