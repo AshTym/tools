@@ -93,3 +93,7 @@ div:first-child > .menu-wrapper .n-menu-item-content {
 body {
   overflow-x: hidden !important;
 }
+
+.n-layout-sider .n-scrollbar-rail {
+  display: none !important;
+}
