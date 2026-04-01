@@ -1,0 +1,437 @@
+export const skusByCategory: {
+  category: string
+  skus: {
+    guid: string
+    stringId: string
+    name: string
+    description: string
+    tier: 'Business' | 'Enterprise' | 'Frontline' | 'Add-on' | 'Education' | 'Gov'
+  }[]
+}[] = [
+  {
+    category: 'Microsoft 365 Business',
+    skus: [
+      {
+        guid: 'O365_BUSINESS_ESSENTIALS',
+        stringId: 'O365_BUSINESS_ESSENTIALS',
+        name: 'Microsoft 365 Business Basic',
+        description: 'Web and mobile Office apps, Exchange, Teams, SharePoint, and 1TB OneDrive. No desktop Office apps.',
+        tier: 'Business',
+      },
+      {
+        guid: 'O365_BUSINESS_PREMIUM',
+        stringId: 'O365_BUSINESS_PREMIUM',
+        name: 'Microsoft 365 Business Standard',
+        description: 'Everything in Basic plus full desktop Office apps (Word, Excel, PowerPoint, etc.).',
+        tier: 'Business',
+      },
+      {
+        guid: 'SPB',
+        stringId: 'SPB',
+        name: 'Microsoft 365 Business Premium',
+        description: 'Business Standard plus Intune, Azure AD P1, Defender for Business, and advanced security features.',
+        tier: 'Business',
+      },
+      {
+        guid: 'O365_BUSINESS',
+        stringId: 'O365_BUSINESS',
+        name: 'Microsoft 365 Apps for Business',
+        description: 'Desktop Office apps and 1TB OneDrive only. No Exchange or Teams included.',
+        tier: 'Business',
+      },
+    ],
+  },
+  {
+    category: 'Microsoft 365 Enterprise',
+    skus: [
+      {
+        guid: 'ENTERPRISEPACK',
+        stringId: 'ENTERPRISEPACK',
+        name: 'Office 365 E3',
+        description: 'Desktop Office apps, Exchange, Teams, SharePoint, compliance tools. No advanced security.',
+        tier: 'Enterprise',
+      },
+      {
+        guid: 'ENTERPRISEPREMIUM',
+        stringId: 'ENTERPRISEPREMIUM',
+        name: 'Office 365 E5',
+        description: 'Everything in E3 plus Power BI Pro, Phone System, Audio Conferencing, and advanced compliance.',
+        tier: 'Enterprise',
+      },
+      {
+        guid: 'SPE_E3',
+        stringId: 'SPE_E3',
+        name: 'Microsoft 365 E3',
+        description: 'O365 E3 plus Windows 10/11 Enterprise, EMS E3 (Intune + Azure AD P1).',
+        tier: 'Enterprise',
+      },
+      {
+        guid: 'SPE_E5',
+        stringId: 'SPE_E5',
+        name: 'Microsoft 365 E5',
+        description: 'Microsoft 365 E3 plus advanced security (Defender), compliance, and analytics. Top-tier enterprise suite.',
+        tier: 'Enterprise',
+      },
+      {
+        guid: 'ENTERPRISEPACK_USGOV_DOD',
+        stringId: 'ENTERPRISEPACK_USGOV_DOD',
+        name: 'Office 365 E3 (DoD)',
+        description: 'O365 E3 for US Department of Defense GCC High environment.',
+        tier: 'Gov',
+      },
+      {
+        guid: 'ENTERPRISEPREMIUM_NOPSTNCONF',
+        stringId: 'ENTERPRISEPREMIUM_NOPSTNCONF',
+        name: 'Office 365 E5 (No Audio Conferencing)',
+        description: 'O365 E5 without Audio Conferencing add-on.',
+        tier: 'Enterprise',
+      },
+      {
+        guid: 'MCOEV',
+        stringId: 'MCOEV',
+        name: 'Microsoft Teams Phone Standard',
+        description: 'Adds PSTN calling capabilities and Phone System to an existing Microsoft 365 plan.',
+        tier: 'Add-on',
+      },
+    ],
+  },
+  {
+    category: 'Frontline Workers',
+    skus: [
+      {
+        guid: 'DESKLESSPACK',
+        stringId: 'DESKLESSPACK',
+        name: 'Office 365 F3',
+        description: 'Web/mobile Office, Exchange (2GB), Teams, SharePoint for firstline workers. No desktop apps.',
+        tier: 'Frontline',
+      },
+      {
+        guid: 'SPE_F1',
+        stringId: 'SPE_F1',
+        name: 'Microsoft 365 F1',
+        description: 'Teams, SharePoint, Yammer, basic security for firstline/frontline workers. No email or Office apps.',
+        tier: 'Frontline',
+      },
+      {
+        guid: 'SPE_F3',
+        stringId: 'SPE_F3',
+        name: 'Microsoft 365 F3',
+        description: 'O365 F3 plus Windows 10/11 Enterprise (F), Intune, and Azure AD P1.',
+        tier: 'Frontline',
+      },
+    ],
+  },
+  {
+    category: 'Exchange',
+    skus: [
+      {
+        guid: 'EXCHANGESTANDARD',
+        stringId: 'EXCHANGESTANDARD',
+        name: 'Exchange Online Plan 1',
+        description: '50GB mailbox, basic Exchange features. No In-Place Archive or advanced compliance.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'EXCHANGEENTERPRISE',
+        stringId: 'EXCHANGEENTERPRISE',
+        name: 'Exchange Online Plan 2',
+        description: '100GB mailbox, unlimited archive, litigation hold, DLP, and voice mail.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'EXCHANGE_S_ESSENTIALS',
+        stringId: 'EXCHANGE_S_ESSENTIALS',
+        name: 'Exchange Online Essentials',
+        description: 'Basic Exchange Online for small business with 50GB mailbox.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'EXCHANGEARCHIVE_ADDON',
+        stringId: 'EXCHANGEARCHIVE_ADDON',
+        name: 'Exchange Online Archiving',
+        description: 'Unlimited cloud-based archiving add-on for on-premises Exchange users.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'EOP_ENTERPRISE',
+        stringId: 'EOP_ENTERPRISE',
+        name: 'Exchange Online Protection',
+        description: 'Anti-spam and anti-malware filtering for on-premises Exchange or standalone use.',
+        tier: 'Add-on',
+      },
+    ],
+  },
+  {
+    category: 'Security & Compliance',
+    skus: [
+      {
+        guid: 'EMS',
+        stringId: 'EMS',
+        name: 'Enterprise Mobility + Security E3',
+        description: 'Intune, Azure AD P1, Azure Information Protection P1, and Advanced Threat Analytics.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'EMSPREMIUM',
+        stringId: 'EMSPREMIUM',
+        name: 'Enterprise Mobility + Security E5',
+        description: 'EMS E3 plus Azure AD P2, Microsoft Defender for Identity, MCAS, and AIP P2.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'INTUNE_A',
+        stringId: 'INTUNE_A',
+        name: 'Microsoft Intune Plan 1',
+        description: 'Device management and mobile application management (MDM/MAM) for all platforms.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'INTUNE_A_D',
+        stringId: 'INTUNE_A_D',
+        name: 'Microsoft Intune Plan 2',
+        description: 'Intune Plan 1 plus advanced endpoint privilege management and tunnel features.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'AAD_PREMIUM',
+        stringId: 'AAD_PREMIUM',
+        name: 'Azure Active Directory Premium P1',
+        description: 'Conditional Access, MFA, SSPR, hybrid identity, and dynamic groups.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'AAD_PREMIUM_P2',
+        stringId: 'AAD_PREMIUM_P2',
+        name: 'Azure Active Directory Premium P2',
+        description: 'AAD P1 plus Identity Protection and Privileged Identity Management (PIM).',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'DEFENDER_ENDPOINT_P1',
+        stringId: 'DEFENDER_ENDPOINT_P1',
+        name: 'Microsoft Defender for Endpoint P1',
+        description: 'Next-gen antivirus, attack surface reduction, and device control. Included in M365 Business Premium.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'DEFENDER_ENDPOINT_P2',
+        stringId: 'DEFENDER_ENDPOINT_P2',
+        name: 'Microsoft Defender for Endpoint P2',
+        description: 'P1 features plus EDR, automated investigation, threat hunting, and vulnerability management.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'MDATP_XPLAT',
+        stringId: 'MDATP_XPLAT',
+        name: 'Microsoft Defender for Endpoint (Cross-Platform)',
+        description: 'Defender for Endpoint coverage for Linux, macOS, iOS, and Android devices.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'THREAT_INTELLIGENCE',
+        stringId: 'THREAT_INTELLIGENCE',
+        name: 'Microsoft Defender for Office 365 P2',
+        description: 'Safe Links, Safe Attachments, anti-phishing, attack simulator, and threat hunting.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'ATP_ENTERPRISE',
+        stringId: 'ATP_ENTERPRISE',
+        name: 'Microsoft Defender for Office 365 P1',
+        description: 'Safe Links, Safe Attachments, and anti-phishing for Exchange and SharePoint.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'INFORMATION_PROTECTION_COMPLIANCE',
+        stringId: 'INFORMATION_PROTECTION_COMPLIANCE',
+        name: 'Microsoft 365 E5 Compliance',
+        description: 'Information protection, insider risk management, eDiscovery, and audit.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'IDENTITY_THREAT_PROTECTION',
+        stringId: 'IDENTITY_THREAT_PROTECTION',
+        name: 'Microsoft 365 E5 Security',
+        description: 'Defender for Endpoint P2, Defender for Office 365 P2, Defender for Identity, and MCAS.',
+        tier: 'Add-on',
+      },
+    ],
+  },
+  {
+    category: 'Teams & Communication',
+    skus: [
+      {
+        guid: 'TEAMS_ESSENTIALS',
+        stringId: 'TEAMS_ESSENTIALS',
+        name: 'Microsoft Teams Essentials',
+        description: 'Teams meetings (30hr limit), 10GB storage, group chat. No Exchange or SharePoint.',
+        tier: 'Business',
+      },
+      {
+        guid: 'TEAMS_EXPLORATORY',
+        stringId: 'TEAMS_EXPLORATORY',
+        name: 'Microsoft Teams Exploratory',
+        description: 'Free trial license automatically assigned to eligible users without a Teams license.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'MCOPSTN1',
+        stringId: 'MCOPSTN1',
+        name: 'Microsoft 365 Domestic Calling Plan',
+        description: 'PSTN minutes for domestic calls within a single country. Requires Phone System.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'MCOPSTN2',
+        stringId: 'MCOPSTN2',
+        name: 'Microsoft 365 Domestic and International Calling Plan',
+        description: 'PSTN minutes for domestic and international calls. Requires Phone System.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'MCOMEETADV',
+        stringId: 'MCOMEETADV',
+        name: 'Microsoft 365 Audio Conferencing',
+        description: 'Dial-in conferencing for Teams meetings via PSTN. Included in O365 E5.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'MCOPSTNC',
+        stringId: 'MCOPSTNC',
+        name: 'Communications Credits',
+        description: 'Pay-as-you-go PSTN minutes for calling plans and audio conferencing overages.',
+        tier: 'Add-on',
+      },
+    ],
+  },
+  {
+    category: 'Microsoft 365 Apps',
+    skus: [
+      {
+        guid: 'OFFICESUBSCRIPTION',
+        stringId: 'OFFICESUBSCRIPTION',
+        name: 'Microsoft 365 Apps for Enterprise',
+        description: 'Full desktop Office suite (Word, Excel, PowerPoint, Outlook, etc.) for enterprise. No cloud services.',
+        tier: 'Enterprise',
+      },
+      {
+        guid: 'O365_BUSINESS',
+        stringId: 'O365_BUSINESS',
+        name: 'Microsoft 365 Apps for Business',
+        description: 'Full desktop Office suite for up to 300 users with 1TB OneDrive. No Exchange.',
+        tier: 'Business',
+      },
+    ],
+  },
+  {
+    category: 'Power Platform',
+    skus: [
+      {
+        guid: 'POWER_BI_STANDARD',
+        stringId: 'POWER_BI_STANDARD',
+        name: 'Power BI (free)',
+        description: 'Free Power BI with limited sharing and collaboration. No premium features.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'POWER_BI_PRO',
+        stringId: 'POWER_BI_PRO',
+        name: 'Power BI Pro',
+        description: 'Full Power BI with sharing, collaboration, and publishing to workspaces.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'FLOW_FREE',
+        stringId: 'FLOW_FREE',
+        name: 'Power Automate Free',
+        description: 'Free Power Automate with limited runs and connectors.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'POWERAPPS_PER_USER',
+        stringId: 'POWERAPPS_PER_USER',
+        name: 'Power Apps per User Plan',
+        description: 'Unlimited Power Apps for a single user including premium connectors.',
+        tier: 'Add-on',
+      },
+    ],
+  },
+  {
+    category: 'Visio',
+    skus: [
+      {
+        guid: 'VISIO_PLAN1_NAT',
+        stringId: 'VISIO_PLAN1_NAT',
+        name: 'Visio Plan 1',
+        description: 'Web-based Visio only. Create and edit diagrams in a browser with templates.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'VISIOCLIENT',
+        stringId: 'VISIOCLIENT',
+        name: 'Visio Plan 2',
+        description: 'Full desktop Visio app plus web version. Includes advanced diagramming and data linking.',
+        tier: 'Add-on',
+      },
+    ],
+  },
+  {
+    category: 'Project',
+    skus: [
+      {
+        guid: 'PROJECTESSENTIALS',
+        stringId: 'PROJECTESSENTIALS',
+        name: 'Project Plan 1',
+        description: 'Web-based Project only. Basic task management and collaboration.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'PROJECTPREMIUM',
+        stringId: 'PROJECTPREMIUM',
+        name: 'Project Plan 3',
+        description: 'Web and desktop Project. Full project management with resource management.',
+        tier: 'Add-on',
+      },
+      {
+        guid: 'PROJECTPROFESSIONAL',
+        stringId: 'PROJECTPROFESSIONAL',
+        name: 'Project Plan 5',
+        description: 'Everything in Plan 3 plus Portfolio management and advanced resource analytics.',
+        tier: 'Add-on',
+      },
+    ],
+  },
+  {
+    category: 'Education',
+    skus: [
+      {
+        guid: 'STANDARDWOFFPACK_FACULTY',
+        stringId: 'STANDARDWOFFPACK_FACULTY',
+        name: 'Office 365 Education for Faculty',
+        description: 'Full Office 365 suite for faculty including desktop apps.',
+        tier: 'Education',
+      },
+      {
+        guid: 'STANDARDWOFFPACK_STUDENT',
+        stringId: 'STANDARDWOFFPACK_STUDENT',
+        name: 'Office 365 Education for Students',
+        description: 'Office 365 for students — typically free with institutional verification.',
+        tier: 'Education',
+      },
+      {
+        guid: 'M365EDU_A3_FACULTY',
+        stringId: 'M365EDU_A3_FACULTY',
+        name: 'Microsoft 365 A3 for Faculty',
+        description: 'Microsoft 365 E3 equivalent for faculty with education-specific compliance tools.',
+        tier: 'Education',
+      },
+      {
+        guid: 'M365EDU_A5_FACULTY',
+        stringId: 'M365EDU_A5_FACULTY',
+        name: 'Microsoft 365 A5 for Faculty',
+        description: 'Microsoft 365 E5 equivalent for faculty including advanced security and compliance.',
+        tier: 'Education',
+      },
+    ],
+  },
+];

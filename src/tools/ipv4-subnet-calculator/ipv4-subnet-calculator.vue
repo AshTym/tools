@@ -20,6 +20,44 @@ const ipValidationRules = [
   },
 ];
 
+function isPrivateIP(base: string): boolean {
+  const parts = base.split('.').map(Number);
+  if (parts[0] === 10) {
+    return true;
+  }
+  if (parts[0] === 172 && parts[1] >= 16 && parts[1] <= 31) {
+    return true;
+  }
+  if (parts[0] === 192 && parts[1] === 168) {
+    return true;
+  }
+  if (parts[0] === 169 && parts[1] === 254) {
+    return true;
+  }
+  if (parts[0] === 127) {
+    return true;
+  }
+  return false;
+}
+
+const usableHosts = computed(() => {
+  if (!networkInfo.value) {
+    return null;
+  }
+  const size = networkInfo.value.size;
+  if (size <= 2) {
+    return size === 2 ? 0 : 1;
+  }
+  return size - 2;
+});
+
+const isPrivate = computed(() => {
+  if (!networkInfo.value) {
+    return null;
+  }
+  return isPrivateIP(networkInfo.value.base);
+});
+
 const sections: {
   label: string
   getValue: (blocks: Netmask) => string | undefined
@@ -73,9 +111,28 @@ const sections: {
   },
 ];
 
+const cheatSheet = [
+  { cidr: '/8', mask: '255.0.0.0', hosts: '16,777,214', size: 16777216 },
+  { cidr: '/16', mask: '255.255.0.0', hosts: '65,534', size: 65536 },
+  { cidr: '/20', mask: '255.255.240.0', hosts: '4,094', size: 4096 },
+  { cidr: '/21', mask: '255.255.248.0', hosts: '2,046', size: 2048 },
+  { cidr: '/22', mask: '255.255.252.0', hosts: '1,022', size: 1024 },
+  { cidr: '/23', mask: '255.255.254.0', hosts: '510', size: 512 },
+  { cidr: '/24', mask: '255.255.255.0', hosts: '254', size: 256 },
+  { cidr: '/25', mask: '255.255.255.128', hosts: '126', size: 128 },
+  { cidr: '/26', mask: '255.255.255.192', hosts: '62', size: 64 },
+  { cidr: '/27', mask: '255.255.255.224', hosts: '30', size: 32 },
+  { cidr: '/28', mask: '255.255.255.240', hosts: '14', size: 16 },
+  { cidr: '/29', mask: '255.255.255.248', hosts: '6', size: 8 },
+  { cidr: '/30', mask: '255.255.255.252', hosts: '2', size: 4 },
+  { cidr: '/31', mask: '255.255.255.254', hosts: '2 (P2P)', size: 2 },
+  { cidr: '/32', mask: '255.255.255.255', hosts: '1 (host)', size: 1 },
+];
+
+const currentBitmask = computed(() => networkInfo.value?.bitmask ?? null);
+
 function switchToBlock({ count = 1 }: { count?: number }) {
   const next = networkInfo.value?.next(count);
-
   if (next) {
     ip.value = next.toString();
   }
@@ -93,6 +150,15 @@ function switchToBlock({ count = 1 }: { count?: number }) {
     />
 
     <div v-if="networkInfo">
+      <div flex items-center gap-2 mb-3>
+        <n-tag :type="isPrivate ? 'success' : 'warning'" size="medium">
+          {{ isPrivate ? 'Private' : 'Public' }} IP Range
+        </n-tag>
+        <n-tag type="info" size="medium">
+          {{ usableHosts?.toLocaleString() }} usable hosts
+        </n-tag>
+      </div>
+
       <div class="subnet-results">
         <div
           v-for="{ getValue, label, undefinedFallback } in sections"
@@ -117,6 +183,24 @@ function switchToBlock({ count = 1 }: { count?: number }) {
           <n-icon :component="ArrowRight" />
         </c-button>
       </div>
+    </div>
+
+    <n-divider />
+    <div mb-3 text-lg op-80>
+      Subnet Cheat Sheet
+    </div>
+    <div class="grid grid-cols-2 gap-8px sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <c-card
+        v-for="row in cheatSheet"
+        :key="row.cidr"
+        class="flex flex-col"
+        :class="currentBitmask !== null && String(currentBitmask) === row.cidr.replace('/', '') ? '!border-primary' : ''"
+        style="padding: 10px 14px;"
+      >
+        <span class="font-mono font-bold text-primary" style="font-size: 1.2rem;">{{ row.cidr }}</span>
+        <span class="text-xs op-60 mt-1">{{ row.mask }}</span>
+        <span class="text-sm font-semibold mt-1">{{ row.hosts }} hosts</span>
+      </c-card>
     </div>
   </div>
 </template>

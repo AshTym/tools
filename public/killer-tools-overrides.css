@@ -30,9 +30,13 @@ a.c-button.circle:not([aria-label="Toggle menu"]),
 
 /* --- sidebar layout --- */
 .sider-content {
-  margin-top: -165px !important;
+  margin-top: -170px !important;
   position: relative;
-  padding-top: -1 !important;
+  padding-top: -10 !important;
+}
+
+.sider-content > div > div:first-child {
+  margin-top: 20px !important;
 }
 
 .logo-click-target {
@@ -52,7 +56,7 @@ a.c-button.circle:not([aria-label="Toggle menu"]),
   padding-left: 0px;
   cursor: pointer;
   margin-top: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .sider-logo img {

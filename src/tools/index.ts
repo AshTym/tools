@@ -87,11 +87,52 @@ import { tool as uuidGenerator } from './uuid-generator';
 import { tool as macAddressLookup } from './mac-address-lookup';
 import { tool as xmlFormatter } from './xml-formatter';
 import { tool as yamlViewer } from './yaml-viewer';
+import { tool as windowsEventLookup } from './windows-event-lookup';
+import { tool as m365SkuDecoder } from './m365-sku-decoder';
+import { tool as passwordPolicyReference } from './password-policy-reference';
+import { tool as windowsErrorCodes } from './windows-error-codes';
 
 export const toolsByCategory: ToolCategory[] = [
   {
-    name: 'Killer Scripts',
-    components: [killerScripts],
+    name: 'Windows',
+    components: [killerScripts, windowsEventLookup, m365SkuDecoder, passwordPolicyReference, windowsErrorCodes],
+  },
+  {
+    name: 'Network',
+    components: [ipv4SubnetCalculator, ipv4AddressConverter, ipv4RangeExpander, macAddressLookup, macAddressGenerator, ipv6UlaGenerator],
+  },
+  {
+    name: 'Web',
+    components: [
+      urlEncoder,
+      htmlEntities,
+      urlParser,
+      deviceInformation,
+      basicAuthGenerator,
+      metaTagGenerator,
+      otpCodeGeneratorAndValidator,
+      mimeTypes,
+      jwtParser,
+      keycodeInfo,
+      slugifyString,
+      htmlWysiwygEditor,
+      userAgentParser,
+      httpStatusCodes,
+      jsonDiff,
+      safelinkDecoder,
+    ],
+  },
+  {
+    name: 'Text',
+    components: [
+      loremIpsumGenerator,
+      textStatistics,
+      emojiPicker,
+      stringObfuscator,
+      textDiff,
+      numeronymGenerator,
+      asciiTextDrawer,
+    ],
   },
   {
     name: 'Crypto',
@@ -123,27 +164,6 @@ export const toolsByCategory: ToolCategory[] = [
     ],
   },
   {
-    name: 'Web',
-    components: [
-      urlEncoder,
-      htmlEntities,
-      urlParser,
-      deviceInformation,
-      basicAuthGenerator,
-      metaTagGenerator,
-      otpCodeGeneratorAndValidator,
-      mimeTypes,
-      jwtParser,
-      keycodeInfo,
-      slugifyString,
-      htmlWysiwygEditor,
-      userAgentParser,
-      httpStatusCodes,
-      jsonDiff,
-      safelinkDecoder,
-    ],
-  },
-  {
     name: 'Images and videos',
     components: [qrCodeGenerator, wifiQrCodeGenerator, svgPlaceholderGenerator, cameraRecorder],
   },
@@ -167,28 +187,12 @@ export const toolsByCategory: ToolCategory[] = [
     ],
   },
   {
-    name: 'Network',
-    components: [ipv4SubnetCalculator, ipv4AddressConverter, ipv4RangeExpander, macAddressLookup, macAddressGenerator, ipv6UlaGenerator],
-  },
-  {
     name: 'Math',
     components: [mathEvaluator, etaCalculator, percentageCalculator],
   },
   {
     name: 'Measurement',
     components: [chronometer, temperatureConverter, benchmarkBuilder],
-  },
-  {
-    name: 'Text',
-    components: [
-      loremIpsumGenerator,
-      textStatistics,
-      emojiPicker,
-      stringObfuscator,
-      textDiff,
-      numeronymGenerator,
-      asciiTextDrawer,
-    ],
   },
   {
     name: 'Data',
