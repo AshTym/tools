@@ -47,7 +47,7 @@ function copyOutput() {
 
 <template>
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
-    <div flex items-center gap-3 mb-4>
+    <div mb-4 flex items-center gap-3>
       <span class="text-sm op-60">Convert to:</span>
       <n-radio-group v-model:value="outputFormat" size="small">
         <n-radio-button value="yaml">
@@ -61,7 +61,7 @@ function copyOutput() {
 
     <div class="grid grid-cols-1 gap-12px md:grid-cols-2">
       <div>
-        <div class="text-xs op-60 mb-1">
+        <div class="mb-1 text-xs op-60">
           Your JSON
         </div>
         <n-input
@@ -72,13 +72,13 @@ function copyOutput() {
           :status="isValid ? undefined : 'error'"
           style="font-family: monospace; font-size: 0.8rem;"
         />
-        <div v-if="!isValid" class="text-xs mt-1" style="color: var(--error-color, #e03131);">
+        <div v-if="!isValid" class="mt-1 text-xs" style="color: var(--error-color, #e03131);">
           Provided JSON is not valid.
         </div>
       </div>
 
       <div>
-        <div flex items-center justify-between mb-1>
+        <div mb-1 flex items-center justify-between>
           <span class="text-xs op-60">{{ outputFormat.toUpperCase() }} output</span>
           <c-button
             v-if="output"

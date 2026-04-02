@@ -49,7 +49,7 @@ async function copyToClipboard(text: string) {
         />
       </div>
 
-      <div class="flex flex-col min-w-0">
+      <div class="min-w-0 flex flex-col">
         <div class="mb-1 flex items-center justify-between">
           <div class="text-xs opacity-60">
             Output HTML:
@@ -62,7 +62,7 @@ async function copyToClipboard(text: string) {
           </n-button>
         </div>
 
-        <div class="flex-1 min-h-[500px]">
+        <div class="min-h-[500px] flex-1">
           <TextareaCopyable
             :value="outputHtml"
             :word-wrap="true"

@@ -60,7 +60,7 @@ watch(jsonValue, (val) => {
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;" class="w-full">
     <div class="grid grid-cols-1 gap-12px md:grid-cols-2">
       <div>
-        <div class="text-xs op-60 mb-1">
+        <div class="mb-1 text-xs op-60">
           XML
         </div>
         <n-input
@@ -71,13 +71,13 @@ watch(jsonValue, (val) => {
           :status="xmlError ? 'error' : undefined"
           style="font-family: monospace; font-size: 0.8rem;"
         />
-        <div v-if="xmlError" class="text-xs mt-1" style="color: var(--error-color, #e03131);">
+        <div v-if="xmlError" class="mt-1 text-xs" style="color: var(--error-color, #e03131);">
           {{ xmlError }}
         </div>
       </div>
 
       <div>
-        <div class="text-xs op-60 mb-1">
+        <div class="mb-1 text-xs op-60">
           JSON
         </div>
         <n-input
@@ -88,7 +88,7 @@ watch(jsonValue, (val) => {
           :status="jsonError ? 'error' : undefined"
           style="font-family: monospace; font-size: 0.8rem;"
         />
-        <div v-if="jsonError" class="text-xs mt-1" style="color: var(--error-color, #e03131);">
+        <div v-if="jsonError" class="mt-1 text-xs" style="color: var(--error-color, #e03131);">
           {{ jsonError }}
         </div>
       </div>
