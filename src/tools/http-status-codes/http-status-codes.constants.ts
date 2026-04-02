@@ -60,8 +60,7 @@ export const codesByCategories: {
       {
         code: 203,
         name: 'Non-Authoritative Information',
-        description:
-          'The request is successful but the content of the original request has been modified by a transforming proxy.',
+        description: 'The request is successful but the content of the original request has been modified by a transforming proxy.',
         type: 'HTTP',
       },
       {
@@ -85,22 +84,19 @@ export const codesByCategories: {
       {
         code: 207,
         name: 'Multi-Status',
-        description:
-          'The message body that follows is an XML message and can contain a number of separate response codes.',
+        description: 'The message body that follows is an XML message and can contain a number of separate response codes.',
         type: 'WebDav',
       },
       {
         code: 208,
         name: 'Already Reported',
-        description:
-          'The members of a DAV binding have already been enumerated in a preceding part of the (multistatus) response.',
+        description: 'The members of a DAV binding have already been enumerated in a preceding part of the (multistatus) response.',
         type: 'WebDav',
       },
       {
         code: 226,
         name: 'IM Used',
-        description:
-          'The server has fulfilled a request for the resource, and the response is a representation of the result.',
+        description: 'The server has fulfilled a request for the resource, and the response is a representation of the result.',
         type: 'HTTP',
       },
     ],
@@ -135,15 +131,13 @@ export const codesByCategories: {
       {
         code: 304,
         name: 'Not Modified',
-        description:
-          'Indicates that the resource has not been modified since the version specified by the request headers.',
+        description: 'Indicates that the resource has not been modified since the version specified by the request headers.',
         type: 'HTTP',
       },
       {
         code: 305,
         name: 'Use Proxy',
-        description:
-          'The requested resource is available only through a proxy, the address for which is provided in the response.',
+        description: 'The requested resource is available only through a proxy, the address for which is provided in the response.',
         type: 'HTTP',
       },
       {
@@ -155,8 +149,7 @@ export const codesByCategories: {
       {
         code: 307,
         name: 'Temporary Redirect',
-        description:
-          'In this case, the request should be repeated with another URI; however, future requests should still use the original URI.',
+        description: 'In this case, the request should be repeated with another URI; however, future requests should still use the original URI.',
         type: 'HTTP',
       },
       {
@@ -179,22 +172,19 @@ export const codesByCategories: {
       {
         code: 401,
         name: 'Unauthorized',
-        description:
-          'Similar to 403 Forbidden, but specifically for use when authentication is required and has failed or has not yet been provided.',
+        description: 'Similar to 403 Forbidden, but specifically for use when authentication is required and has failed or has not yet been provided.',
         type: 'HTTP',
       },
       {
         code: 402,
         name: 'Payment Required',
-        description:
-          'Reserved for future use. The original intention was that this code might be used as part of some form of digital cash or micropayment scheme.',
+        description: 'Reserved for future use. The original intention was that this code might be used as part of some form of digital cash or micropayment scheme.',
         type: 'HTTP',
       },
       {
         code: 403,
         name: 'Forbidden',
-        description:
-          'The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.',
+        description: 'The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.',
         type: 'HTTP',
       },
       {
@@ -212,8 +202,7 @@ export const codesByCategories: {
       {
         code: 406,
         name: 'Not Acceptable',
-        description:
-          'The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request.',
+        description: 'The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request.',
         type: 'HTTP',
       },
       {
@@ -231,8 +220,7 @@ export const codesByCategories: {
       {
         code: 409,
         name: 'Conflict',
-        description:
-          'Indicates that the request could not be processed because of conflict in the request, such as an edit conflict.',
+        description: 'Indicates that the request could not be processed because of conflict in the request, such as an edit conflict.',
         type: 'HTTP',
       },
       {
@@ -244,8 +232,7 @@ export const codesByCategories: {
       {
         code: 411,
         name: 'Length Required',
-        description:
-          'The request did not specify the length of its content, which is required by the requested resource.',
+        description: 'The request did not specify the length of its content, which is required by the requested resource.',
         type: 'HTTP',
       },
       {
@@ -341,15 +328,13 @@ export const codesByCategories: {
       {
         code: 431,
         name: 'Request Header Fields Too Large',
-        description:
-          'The server is unwilling to process the request because either an individual header field, or all the header fields collectively, are too large.',
+        description: 'The server is unwilling to process the request because either an individual header field, or all the header fields collectively, are too large.',
         type: 'HTTP',
       },
       {
         code: 451,
         name: 'Unavailable For Legal Reasons',
-        description:
-          'A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the requested resource.',
+        description: 'A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the requested resource.',
         type: 'HTTP',
       },
     ],
@@ -360,22 +345,19 @@ export const codesByCategories: {
       {
         code: 500,
         name: 'Internal Server Error',
-        description:
-          'A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.',
+        description: 'A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.',
         type: 'HTTP',
       },
       {
         code: 501,
         name: 'Not Implemented',
-        description:
-          'The server either does not recognize the request method, or it lacks the ability to fulfill the request.',
+        description: 'The server either does not recognize the request method, or it lacks the ability to fulfill the request.',
         type: 'HTTP',
       },
       {
         code: 502,
         name: 'Bad Gateway',
-        description:
-          'The server was acting as a gateway or proxy and received an invalid response from the upstream server.',
+        description: 'The server was acting as a gateway or proxy and received an invalid response from the upstream server.',
         type: 'HTTP',
       },
       {
@@ -387,8 +369,7 @@ export const codesByCategories: {
       {
         code: 504,
         name: 'Gateway Timeout',
-        description:
-          'The server was acting as a gateway or proxy and did not receive a timely response from the upstream server.',
+        description: 'The server was acting as a gateway or proxy and did not receive a timely response from the upstream server.',
         type: 'HTTP',
       },
       {
@@ -424,7 +405,150 @@ export const codesByCategories: {
       {
         code: 511,
         name: 'Network Authentication Required',
-        description: 'The client needs to authenticate to gain network access.',
+        description: 'The client needs to authenticate to gain network access. Often returned by captive portals.',
+        type: 'HTTP',
+      },
+    ],
+  },
+  {
+    category: 'Unofficial & Vendor-Specific',
+    codes: [
+      {
+        code: 419,
+        name: 'Page Expired (Laravel)',
+        description: 'Used by the Laravel PHP framework when a CSRF token is missing or expired. Common when a session times out and a form is submitted.',
+        type: 'HTTP',
+      },
+      {
+        code: 420,
+        name: 'Enhance Your Calm (Twitter/X)',
+        description: 'Returned by the Twitter/X API when an application is being rate limited. Not an official RFC code.',
+        type: 'HTTP',
+      },
+      {
+        code: 430,
+        name: 'Request Header Fields Too Large (Shopify)',
+        description: 'Used by Shopify to indicate that the request had too many cookies.',
+        type: 'HTTP',
+      },
+      {
+        code: 449,
+        name: 'Retry With (Microsoft IIS)',
+        description: 'A Microsoft IIS extension indicating the request should be retried after performing the appropriate action.',
+        type: 'HTTP',
+      },
+      {
+        code: 450,
+        name: 'Blocked by Windows Parental Controls',
+        description: 'A Microsoft extension indicating that Windows Parental Controls are blocking access to the requested webpage.',
+        type: 'HTTP',
+      },
+      {
+        code: 444,
+        name: 'No Response (Nginx)',
+        description: 'Used by Nginx to indicate that the server has returned no information and closed the connection. Commonly used to deny malicious or unwanted requests.',
+        type: 'HTTP',
+      },
+      {
+        code: 494,
+        name: 'Request Header Too Large (Nginx)',
+        description: 'Returned by Nginx when the client sends a request with headers that are too large. Similar to RFC 431 but specific to Nginx.',
+        type: 'HTTP',
+      },
+      {
+        code: 495,
+        name: 'SSL Certificate Error (Nginx)',
+        description: 'Returned by Nginx when the client provides an invalid SSL certificate during mutual TLS (mTLS) authentication.',
+        type: 'HTTP',
+      },
+      {
+        code: 496,
+        name: 'SSL Certificate Required (Nginx)',
+        description: 'Returned by Nginx when a client certificate is required for mTLS but the client did not provide one.',
+        type: 'HTTP',
+      },
+      {
+        code: 497,
+        name: 'HTTP Request Sent to HTTPS Port (Nginx)',
+        description: 'Returned by Nginx when a plain HTTP request is sent to an HTTPS-only port. Usually seen when a client is misconfigured.',
+        type: 'HTTP',
+      },
+      {
+        code: 499,
+        name: 'Client Closed Request (Nginx)',
+        description: 'Logged by Nginx when the client closed the connection before the server finished responding. Common in timeout and performance debugging.',
+        type: 'HTTP',
+      },
+      {
+        code: 509,
+        name: 'Bandwidth Limit Exceeded (cPanel)',
+        description: 'Used by cPanel and some hosting providers when a site has exceeded its allocated monthly bandwidth.',
+        type: 'HTTP',
+      },
+      {
+        code: 520,
+        name: 'Unknown Error (Cloudflare)',
+        description: 'The origin server returned an unexpected or empty response to Cloudflare. Check origin server logs for errors.',
+        type: 'HTTP',
+      },
+      {
+        code: 521,
+        name: 'Web Server Is Down (Cloudflare)',
+        description: 'Cloudflare could not connect to the origin server. The origin web server refused the connection.',
+        type: 'HTTP',
+      },
+      {
+        code: 522,
+        name: 'Connection Timed Out (Cloudflare)',
+        description: 'Cloudflare\'s connection to the origin server timed out. The origin took too long to respond to a TCP handshake.',
+        type: 'HTTP',
+      },
+      {
+        code: 523,
+        name: 'Origin Is Unreachable (Cloudflare)',
+        description: 'Cloudflare cannot reach the origin server. DNS resolution failure or the origin IP is unreachable.',
+        type: 'HTTP',
+      },
+      {
+        code: 524,
+        name: 'A Timeout Occurred (Cloudflare)',
+        description: 'Cloudflare established a TCP connection to the origin but the origin did not reply with an HTTP response within 100 seconds.',
+        type: 'HTTP',
+      },
+      {
+        code: 525,
+        name: 'SSL Handshake Failed (Cloudflare)',
+        description: 'Cloudflare could not complete the SSL/TLS handshake with the origin server. Often a certificate mismatch or cipher suite issue.',
+        type: 'HTTP',
+      },
+      {
+        code: 526,
+        name: 'Invalid SSL Certificate (Cloudflare)',
+        description: 'Cloudflare could not validate the SSL certificate on the origin server. The certificate is expired, self-signed, or has a hostname mismatch.',
+        type: 'HTTP',
+      },
+      {
+        code: 527,
+        name: 'Railgun Error (Cloudflare)',
+        description: 'Returned by Cloudflare when there is a timeout or error with the deprecated Railgun connection to the origin.',
+        type: 'HTTP',
+      },
+      {
+        code: 530,
+        name: 'Site Frozen / Origin DNS Error (Cloudflare)',
+        description: 'Cloudflare returns 530 when a 1XXX internal error occurs, or when the site has been suspended. Accompanied by a 1xxx error code in the response body.',
+        type: 'HTTP',
+      },
+      {
+        code: 598,
+        name: 'Network Read Timeout Error (Proxies)',
+        description: 'Used by some HTTP proxies to signal a network read timeout behind the proxy when communicating with the upstream server.',
+        type: 'HTTP',
+      },
+      {
+        code: 599,
+        name: 'Network Connect Timeout Error (Proxies)',
+        description: 'Used by some HTTP proxies to signal a network connect timeout — the proxy could not connect to the upstream server in time.',
         type: 'HTTP',
       },
     ],

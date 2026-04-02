@@ -140,67 +140,76 @@ function switchToBlock({ count = 1 }: { count?: number }) {
 </script>
 
 <template>
-  <div>
-    <c-input-text
-      v-model:value="ip"
-      label="An IPv4 address with or without mask"
-      placeholder="The ipv4 address..."
-      :validation-rules="ipValidationRules"
-      mb-4
-    />
+  <div style="flex: 1 1 900px; max-width: 1400px; margin-top: -28px;">
+    <div class="grid grid-cols-1 gap-16px lg:grid-cols-2" style="align-items: start;">
 
-    <div v-if="networkInfo">
-      <div flex items-center gap-2 mb-3>
-        <n-tag :type="isPrivate ? 'success' : 'warning'" size="medium">
-          {{ isPrivate ? 'Private' : 'Public' }} IP Range
-        </n-tag>
-        <n-tag type="info" size="medium">
-          {{ usableHosts?.toLocaleString() }} usable hosts
-        </n-tag>
-      </div>
+      <!-- Left: Input + Results -->
+      <div>
+        <c-input-text
+          v-model:value="ip"
+          label="An IPv4 address with or without mask"
+          placeholder="The ipv4 address..."
+          :validation-rules="ipValidationRules"
+          mb-4
+        />
 
-      <div class="subnet-results">
-        <div
-          v-for="{ getValue, label, undefinedFallback } in sections"
-          :key="label"
-          class="subnet-row"
-        >
-          <span class="subnet-label">{{ label }}</span>
-          <span class="subnet-value">
-            <SpanCopyable v-if="getValue(networkInfo)" :value="getValue(networkInfo)" />
-            <span v-else op-70>{{ undefinedFallback }}</span>
-          </span>
+        <div v-if="networkInfo">
+          <div flex items-center gap-2 mb-3>
+            <n-tag :type="isPrivate ? 'success' : 'warning'" size="medium">
+              {{ isPrivate ? 'Private' : 'Public' }} IP Range
+            </n-tag>
+            <n-tag type="info" size="medium">
+              {{ usableHosts?.toLocaleString() }} usable hosts
+            </n-tag>
+          </div>
+
+          <div class="subnet-results">
+            <div
+              v-for="{ getValue, label, undefinedFallback } in sections"
+              :key="label"
+              class="subnet-row"
+            >
+              <span class="subnet-label">{{ label }}</span>
+              <span class="subnet-value">
+                <SpanCopyable v-if="getValue(networkInfo)" :value="getValue(networkInfo)" />
+                <span v-else op-70>{{ undefinedFallback }}</span>
+              </span>
+            </div>
+          </div>
+
+          <div mt-3 flex items-center justify-between>
+            <c-button @click="switchToBlock({ count: -1 })">
+              <n-icon :component="ArrowLeft" />
+              Previous block
+            </c-button>
+            <c-button @click="switchToBlock({ count: 1 })">
+              Next block
+              <n-icon :component="ArrowRight" />
+            </c-button>
+          </div>
         </div>
       </div>
 
-      <div mt-3 flex items-center justify-between>
-        <c-button @click="switchToBlock({ count: -1 })">
-          <n-icon :component="ArrowLeft" />
-          Previous block
-        </c-button>
-        <c-button @click="switchToBlock({ count: 1 })">
-          Next block
-          <n-icon :component="ArrowRight" />
-        </c-button>
+      <!-- Right: Cheat Sheet -->
+      <div>
+        <div mb-3 text-lg op-80>
+          Subnet Cheat Sheet
+        </div>
+        <div class="grid grid-cols-2 gap-8px sm:grid-cols-3">
+          <c-card
+            v-for="row in cheatSheet"
+            :key="row.cidr"
+            class="flex flex-col"
+            :class="currentBitmask !== null && String(currentBitmask) === row.cidr.replace('/', '') ? '!border-primary' : ''"
+            style="padding: 10px 14px;"
+          >
+            <span class="font-mono font-bold text-primary" style="font-size: 1.2rem;">{{ row.cidr }}</span>
+            <span class="text-xs op-60 mt-1">{{ row.mask }}</span>
+            <span class="text-sm font-semibold mt-1">{{ row.hosts }} hosts</span>
+          </c-card>
+        </div>
       </div>
-    </div>
 
-    <n-divider />
-    <div mb-3 text-lg op-80>
-      Subnet Cheat Sheet
-    </div>
-    <div class="grid grid-cols-2 gap-8px sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-      <c-card
-        v-for="row in cheatSheet"
-        :key="row.cidr"
-        class="flex flex-col"
-        :class="currentBitmask !== null && String(currentBitmask) === row.cidr.replace('/', '') ? '!border-primary' : ''"
-        style="padding: 10px 14px;"
-      >
-        <span class="font-mono font-bold text-primary" style="font-size: 1.2rem;">{{ row.cidr }}</span>
-        <span class="text-xs op-60 mt-1">{{ row.mask }}</span>
-        <span class="text-sm font-semibold mt-1">{{ row.hosts }} hosts</span>
-      </c-card>
     </div>
   </div>
 </template>
