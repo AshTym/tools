@@ -33,3 +33,19 @@ coverage
 /playwright/.cache/
 # Webkit with playwright creates a salt file
 salt
+# Signing keys
+*.keystore
+*.jks
+android/keystore.properties
+
+# Android / Capacitor
+android/
+capacitor.config.ts
+
+# Build artifacts
+build-out.txt
+build-err.txt
+
+# App store assets
+feature-graphic.png
+screenshots/
