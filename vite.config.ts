@@ -116,6 +116,9 @@ export default defineConfig({
   test: {
     exclude: [...configDefaults.exclude, '**/*.e2e.spec.ts'],
   },
+  server: {
+    host: true,
+  },
   build: {
     target: 'esnext',
   },

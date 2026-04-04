@@ -131,7 +131,7 @@ function blur() {
 }
 
 onMounted(() => {
-  if (autofocus.value) {
+  if (autofocus.value && !window.matchMedia('(max-width: 700px)').matches) {
     focus();
   }
 });

@@ -4,6 +4,7 @@ import { useThemeVars } from 'naive-ui';
 import { RouterLink, useRoute } from 'vue-router';
 import MenuIconItem from './MenuIconItem.vue';
 import type { Tool, ToolCategory } from '@/tools/tools.types';
+import { useStyleStore } from '@/stores/style.store';
 
 const props = withDefaults(defineProps<{ toolsByCategory?: ToolCategory[] }>(), { toolsByCategory: () => [] });
 const { toolsByCategory } = toRefs(props);
@@ -43,6 +44,13 @@ const menuOptions = computed(() =>
 );
 
 const themeVars = useThemeVars();
+
+const styleStore = useStyleStore();
+function onMenuSelect() {
+  if (styleStore.isSmallScreen) {
+    styleStore.isMenuCollapsed = true;
+  }
+}
 </script>
 
 <template>
@@ -66,6 +74,7 @@ const themeVars = useThemeVars();
           :options="tools"
           :indent="8"
           :default-expand-all="true"
+          @update:value="onMenuSelect"
         />
       </div>
     </n-collapse-transition>
