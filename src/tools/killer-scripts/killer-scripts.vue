@@ -68,6 +68,11 @@ async function downloadScript(script: { name: string; download_url: string }) {
     </n-alert>
 
     <template v-else>
+      <div class="mb-4 rounded px-4 py-3 text-sm" style="background: rgba(30, 165, 76, 0.08); border: 1px solid rgba(30, 165, 76, 0.25); color: inherit;">
+        <span class="font-semibold" style="color: #1ea54c;">Copy Command</span> copies a one-liner to your clipboard that downloads and runs the script directly in PowerShell.
+        <span class="font-semibold" style="color: inherit; opacity: 0.7;">Download</span> saves the <code>.ps1</code> file to your machine for manual use.
+
+      </div>
       <div
         class="grid grid-cols-1 gap-12px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4"
       >
