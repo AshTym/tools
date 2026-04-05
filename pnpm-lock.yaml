@@ -170,9 +170,6 @@ importers:
       pinia:
         specifier: ^2.0.34
         version: 2.0.34(typescript@5.2.2)(vue@3.3.4)
-      plausible-tracker:
-        specifier: ^0.3.8
-        version: 0.3.8
       qrcode:
         specifier: ^1.5.1
         version: 1.5.1
@@ -4830,10 +4827,6 @@ packages:
 
   pkg-types@1.2.1:
     resolution: {integrity: sha512-sQoqa8alT3nHjGuTjuKgOnvjo4cljkufdtLMnO2LBP/wRwuDlo1tkaEdMxCRhyGRPacv/ztlZgDPm2b7FAmEvw==}
-
-  plausible-tracker@0.3.8:
-    resolution: {integrity: sha512-lmOWYQ7s9KOUJ1R+YTOR3HrjdbxIS2Z4de0P/Jx2dQPteznJl2eX3tXxKClpvbfyGP59B5bbhW8ftN59HbbFSg==}
-    engines: {node: '>=10'}
 
   playwright-core@1.32.3:
     resolution: {integrity: sha512-SB+cdrnu74ZIn5Ogh/8278ngEh9NEEV0vR4sJFmK04h2iZpybfbqBY0bX6+BLYWVdV12JLLI+JEFtSnYgR+mWg==}
@@ -11519,8 +11512,6 @@ snapshots:
       confbox: 0.1.8
       mlly: 1.7.3
       pathe: 1.1.2
-
-  plausible-tracker@0.3.8: {}
 
   playwright-core@1.32.3: {}
 
