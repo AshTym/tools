@@ -63,7 +63,7 @@ function copyValue(value: string) {
   <div style="flex: 1 1 900px; max-width: 1400px; margin-top: 0;">
     <c-input-text
       v-model:value="search"
-      placeholder="Search by policy name, path, registry key, or description..."
+      placeholder="Search policies, paths, registry keys..."
       autofocus
       raw-text
       mb-10
