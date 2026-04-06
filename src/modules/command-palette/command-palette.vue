@@ -25,7 +25,7 @@ const keys = useMagicKeys({
   },
 });
 
-whenever(isModalOpen, () => inputRef.value?.focus());
+whenever(isModalOpen, () => nextTick(() => setTimeout(() => inputRef.value?.focus(), 100)));
 
 whenever(keys.ctrl_k, open);
 whenever(keys.meta_k, open);
