@@ -157,7 +157,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       strategies: 'generateSW',
       manifest: {
-        name: 'killer tools',
+        name: 'Killer Tools',
         description: 'A collection of handy tools for developers and IT pros.',
         display: 'standalone',
         lang: 'en-US',
