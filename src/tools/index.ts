@@ -80,6 +80,7 @@ import { tool as m365SkuDecoder } from './m365-sku-decoder';
 import { tool as groupPolicyReference } from './group-policy-reference';
 import { tool as windowsErrorCodes } from './windows-error-codes';
 import { tool as emailDnsChecker } from './email-dns-checker';
+import { tool as emailRecordGenerator } from './email-record-generator';
 import { tool as exchangeNdrLookup } from './exchange-ndr-lookup';
 import { tool as cveLookup } from './cve-lookup';
 import { tool as portProtocolReference } from './port-protocol-reference';
@@ -110,6 +111,7 @@ export const toolsByCategory: ToolCategory[] = [
       cveLookup,
       emailDnsChecker,
       emailHeaderParser,
+      emailRecordGenerator,
       ipv4AddressConverter,
       ipv4RangeExpander,
       ipv4SubnetCalculator,
