@@ -209,7 +209,7 @@ const overallMessage: Record<string, string> = {
     <div mb-6 flex gap-3>
       <c-input-text
         v-model:value="domain"
-        placeholder="Enter a domain (e.g. thekiller.net)"
+        placeholder="Enter a domain (e.g. killertools.net)"
         style="flex: 1;"
         raw-text
         @keyup.enter="runChecks"
