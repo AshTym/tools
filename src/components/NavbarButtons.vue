@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IconBrandGithub, IconInfoCircle, IconMoon, IconSun } from '@tabler/icons-vue';
+import { IconBrandGithub, IconInfoCircle, IconMoon, IconRadar, IconSun } from '@tabler/icons-vue';
 import { useStyleStore } from '@/stores/style.store';
 
 const styleStore = useStyleStore();
@@ -7,6 +7,19 @@ const { isDarkTheme } = toRefs(styleStore);
 </script>
 
 <template>
+  <c-tooltip tooltip="KillerScan" position="bottom">
+    <c-button
+      circle
+      variant="text"
+      href="https://scan.killertools.net"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="KillerScan Network Scanner"
+    >
+      <n-icon size="25" :component="IconRadar" />
+    </c-button>
+  </c-tooltip>
+
   <c-tooltip :tooltip="$t('home.nav.github')" position="bottom">
     <c-button
       circle

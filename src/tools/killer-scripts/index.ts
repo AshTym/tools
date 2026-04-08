@@ -1,4 +1,4 @@
-import Activity from '@vicons/tabler/Activity';
+import BrandWindows from '@vicons/tabler/BrandWindows';
 import { defineTool } from '../tool';
 
 export const tool = defineTool({
@@ -9,5 +9,5 @@ export const tool = defineTool({
   component: () => import('./killer-scripts.vue'),
   fullscreen: true,
   headerLink: { label: 'GitHub ↗', href: 'https://github.com/SteveTheKiller/killer-scripts' },
-  icon: Activity,
+  icon: BrandWindows,
 });

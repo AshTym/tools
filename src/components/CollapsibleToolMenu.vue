@@ -82,6 +82,30 @@ function onMenuSelect() {
 </template>
 
 <style scoped lang="less">
+.killerscan-link {
+  padding: 6px 0 2px 32px;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: v-bind('themeVars.primaryColor');
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.85;
+    transition: opacity 0.15s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .ks-icon {
+    font-size: 16px;
+  }
+  .ks-external {
+    font-size: 11px;
+    opacity: 0.5;
+  }
+}
 .menu-wrapper {
   display: flex;
   flex-direction: row;

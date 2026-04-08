@@ -4,6 +4,7 @@ import { tool as basicAuthGenerator } from './basic-auth-generator';
 import { tool as emailNormalizer } from './email-normalizer';
 import { tool as asciiTextDrawer } from './ascii-text-drawer';
 import { tool as killerScripts } from './killer-scripts';
+import { tool as killerScan } from './killer-scan';
 import { tool as textToUnicode } from './text-to-unicode';
 import { tool as safelinkDecoder } from './safelink-decoder';
 import { tool as regexTester } from './regex-tester';
@@ -108,6 +109,7 @@ export const toolsByCategory: ToolCategory[] = [
   {
     name: 'Network',
     components: [
+      killerScan,
       cveLookup,
       emailDnsChecker,
       emailHeaderParser,

@@ -12,8 +12,8 @@ a[href*="twitter.com"],
 .i-mdi-twitter,
 .i-mdi-information-outline,
 .i-mdi-information,
-a.c-button.circle:not([aria-label="Toggle menu"]),
-.c-button.circle:not([aria-label="Toggle menu"]) {
+a.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="KillerScan Network Scanner"]),
+.c-button.circle:not([aria-label="Toggle menu"]):not([aria-label="KillerScan Network Scanner"]) {
   display: none !important;
 }
 
@@ -206,4 +206,15 @@ body {
 .tool-title-compact {
   opacity: 0.7 !important;
   font-size: 0.9rem !important;
+}
+
+/* --- hide compact header on KillerScan page --- */
+body:has([href="/killer-scan"].router-link-active) .tool-header-compact {
+  display: none !important;
+}
+
+/* --- KillerScan: use full width --- */
+body:has([href="/killer-scan"].router-link-active) .tool-content-fullscreen > * {
+  flex: 1 1 100% !important;
+  max-width: 100%;
 }
