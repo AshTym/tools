@@ -80,12 +80,12 @@ import { tool as powershellBuilder } from './powershell-builder';
 import { tool as m365SkuDecoder } from './m365-sku-decoder';
 import { tool as groupPolicyReference } from './group-policy-reference';
 import { tool as windowsErrorCodes } from './windows-error-codes';
-import { tool as emailDnsChecker } from './email-dns-checker';
+import { tool as domainLookup } from './domain-lookup';
 import { tool as emailRecordGenerator } from './email-record-generator';
 import { tool as exchangeNdrLookup } from './exchange-ndr-lookup';
 import { tool as cveLookup } from './cve-lookup';
 import { tool as portProtocolReference } from './port-protocol-reference';
-import { tool as whoisChecker } from './whois-checker';
+// whois-checker and email-dns-checker merged into domain-lookup
 import { tool as emailHeaderParser } from './email-header-parser';
 import { tool as xmlJsonConverter } from './xml-json-converter';
 import { tool as yamlConverter } from './yaml-converter';
@@ -111,7 +111,7 @@ export const toolsByCategory: ToolCategory[] = [
     components: [
       killerScan,
       cveLookup,
-      emailDnsChecker,
+      domainLookup,
       emailHeaderParser,
       emailRecordGenerator,
       ipv4AddressConverter,
@@ -120,7 +120,6 @@ export const toolsByCategory: ToolCategory[] = [
       ipv6UlaGenerator,
       macAddressLookup,
       portProtocolReference,
-      whoisChecker,
     ],
   },
   {
