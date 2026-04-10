@@ -5,7 +5,7 @@ const features = [
   { title: 'Vendor Identification', desc: 'MAC OUI lookup against the IEEE database identifies device manufacturers -- printers, switches, APs, IoT, and more.' },
   { title: 'Device Classification', desc: 'Automatic typing via hostname keywords, OUI vendor, and port fingerprinting. Right-click to manually override any device type.' },
   { title: 'Export', desc: 'Export scan results as CSV or HTML report. Right-click any device to copy IP, MAC, hostname, or launch RDP/SSH/browser.' },
-  { title: 'Single File, No Install', desc: 'One exe, ~484 KB zipped. No installer, no admin rights needed, no dependencies beyond the .NET runtime.' },
+  { title: 'Single File, No Install', desc: 'One exe, ~500 KB zipped. No installer, no admin rights needed, no dependencies beyond the .NET runtime.' },
 ];
 </script>
 
@@ -40,7 +40,7 @@ const features = [
         Download for Windows (.zip)
       </a>
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-        v1.1.0 &middot; Windows 10/11 x64 &middot; ~484 KB &middot; Requires
+        v1.1.1 &middot; Windows 10/11 x64 &middot; ~500 KB &middot; Requires
         <a
           href="https://dotnet.microsoft.com/download/dotnet/8.0"
           target="_blank"
