@@ -481,11 +481,11 @@ async function runLookup() {
       {{ whoisError }}
     </n-alert>
     <n-alert
-      v-if="emailChecked && overallEmailStatus && overallEmailStatus !== 'pass'"
-      :type="overallEmailStatus === 'fail' ? 'error' : 'warning'"
+      v-if="emailChecked && overallEmailStatus === 'fail'"
+      type="error"
       mb-4
     >
-      {{ overallEmailMessage[overallEmailStatus] }}
+      {{ overallEmailMessage.fail }}
     </n-alert>
     <n-alert v-if="whoisResult && expiryAlertType" :type="expiryAlertType" mb-4>
       {{ expiryAlertMessage }}
@@ -519,12 +519,12 @@ async function runLookup() {
     <!-- ============================================================= -->
     <!-- Two-column results: WHOIS left, Email DNS right                -->
     <!-- ============================================================= -->
-    <div v-if="whoisResult || emailChecked" class="grid grid-cols-1 gap-16px lg:grid-cols-2">
+    <div v-if="whoisResult || emailChecked" class="grid grid-cols-1 gap-12px lg:grid-cols-2">
       <!-- LEFT: WHOIS -->
-      <div v-if="whoisResult" class="grid grid-cols-1 gap-16px" style="align-content: start;">
+      <div v-if="whoisResult" class="grid grid-cols-1 gap-12px" style="align-content: start;">
         <!-- Registration -->
         <c-card>
-          <div mb-3 flex items-center justify-between>
+          <div mb-2 flex items-center justify-between>
             <span class="text-lg font-bold">
               {{ whoisResult.ldhName ?? domain }}
             </span>
@@ -532,12 +532,12 @@ async function runLookup() {
               {{ expiryLabel }}
             </n-tag>
           </div>
-          <div class="grid grid-cols-1 gap-8px">
+          <div class="grid grid-cols-1 gap-2px">
             <div
               v-for="row in registrationRows"
               :key="row.label"
               flex items-center justify-between gap-2
-              class="rounded p-2"
+              class="rounded p-1.5 px-2"
               style="background: rgba(255,255,255,0.05)"
             >
               <div style="min-width: 0;">
@@ -557,7 +557,7 @@ async function runLookup() {
 
         <!-- DNSSEC -->
         <c-card v-if="dnssec">
-          <div mb-3 flex items-center justify-between>
+          <div mb-2 flex items-center justify-between>
             <span class="text-lg font-bold">
               DNSSEC
             </span>
@@ -579,13 +579,13 @@ async function runLookup() {
 
         <!-- Status -->
         <c-card v-if="whoisResult.status?.length">
-          <div mb-3>
+          <div mb-2>
             <span class="text-lg font-bold">
               Status
             </span>
           </div>
-          <div class="grid grid-cols-1 gap-8px">
-            <div v-for="(s, i) in whoisResult.status" :key="i" class="rounded p-2" style="background: rgba(255,255,255,0.05)">
+          <div class="grid grid-cols-1 gap-2px">
+            <div v-for="(s, i) in whoisResult.status" :key="i" class="rounded p-1.5 px-2" style="background: rgba(255,255,255,0.05)">
               <div mb-1>
                 <n-tag :type="statusType(s)" size="small">
                   {{ s }}
@@ -600,12 +600,12 @@ async function runLookup() {
 
         <!-- Contacts -->
         <c-card v-if="contacts.length">
-          <div mb-3>
+          <div mb-2>
             <span class="text-lg font-bold">
               Contacts
             </span>
           </div>
-          <div class="grid grid-cols-1 gap-12px">
+          <div class="grid grid-cols-1 gap-6px">
             <div v-for="contact in contacts" :key="contact.role">
               <div class="mb-1 text-xs font-bold font-mono uppercase op-60">
                 {{ contact.role }}
@@ -620,7 +620,7 @@ async function runLookup() {
                   ].filter(f => f.value && f.value !== 'REDACTED FOR PRIVACY' && !f.value.toLowerCase().includes('redacted'))"
                   :key="field.label"
                   flex items-center justify-between gap-2
-                  class="rounded p-2"
+                  class="rounded p-1.5 px-2"
                   style="background: rgba(255,255,255,0.05)"
                 >
                   <div style="min-width: 0;">
@@ -648,7 +648,7 @@ async function runLookup() {
 
         <!-- Remarks -->
         <c-card v-if="remarks.length">
-          <div mb-3>
+          <div mb-2>
             <span class="text-lg font-bold">
               Remarks
             </span>
@@ -667,10 +667,10 @@ async function runLookup() {
       </div>
 
       <!-- RIGHT: Email DNS -->
-      <div v-if="emailChecked || loading" class="grid grid-cols-1 gap-16px" style="align-content: start;">
+      <div v-if="emailChecked || loading" class="grid grid-cols-1 gap-12px" style="align-content: start;">
         <!-- Nameservers -->
         <c-card v-if="whoisResult?.nameservers?.length">
-          <div mb-3>
+          <div mb-2>
             <span class="text-lg font-bold">
               Nameservers
             </span>
@@ -679,7 +679,7 @@ async function runLookup() {
             v-for="(ns, i) in whoisResult.nameservers"
             :key="i"
             flex items-center justify-between
-            class="mb-1 rounded p-2 text-xs font-mono"
+            class="mb-0.5 rounded p-1.5 px-2 text-xs font-mono"
             style="background: rgba(255,255,255,0.05)"
           >
             <span>{{ ns.ldhName }}</span>
@@ -691,7 +691,7 @@ async function runLookup() {
 
         <!-- MX -->
         <c-card>
-          <div mb-3 flex items-center justify-between>
+          <div mb-2 flex items-center justify-between>
             <span class="text-lg font-bold">
               MX Records
             </span>
@@ -705,7 +705,7 @@ async function runLookup() {
               v-for="(record, i) in emailResults.mx.value"
               :key="i"
               flex items-center justify-between
-              class="mb-1 rounded p-2 text-xs font-mono"
+              class="mb-0.5 rounded p-1.5 px-2 text-xs font-mono"
               style="background: rgba(255,255,255,0.05)"
             >
               <span>{{ record }}</span>
@@ -721,7 +721,7 @@ async function runLookup() {
 
         <!-- SPF -->
         <c-card>
-          <div mb-3 flex items-center justify-between>
+          <div mb-2 flex items-center justify-between>
             <span class="text-lg font-bold">
               SPF Record
             </span>
@@ -733,7 +733,7 @@ async function runLookup() {
           <div
             v-if="emailResults.spf.raw && emailResults.spf.raw !== 'DNS lookup failed.' && emailResults.spf.raw !== 'No SPF record found.'"
             flex items-start justify-between gap-2
-            class="mb-2 rounded p-2 text-xs font-mono"
+            class="mb-1 rounded p-1.5 px-2 text-xs font-mono"
             style="background: rgba(255,255,255,0.05); overflow-wrap: break-word;"
           >
             <span>{{ emailResults.spf.raw }}</span>
@@ -751,7 +751,7 @@ async function runLookup() {
 
         <!-- DKIM -->
         <c-card>
-          <div mb-3 flex items-center justify-between>
+          <div mb-2 flex items-center justify-between>
             <span class="text-lg font-bold">
               DKIM Records
             </span>
@@ -764,7 +764,7 @@ async function runLookup() {
             <div
               v-for="(record, i) in emailResults.dkim.value"
               :key="i"
-              class="mb-1 rounded p-2 text-xs font-mono"
+              class="mb-0.5 rounded p-1.5 px-2 text-xs font-mono"
               style="background: rgba(255,255,255,0.05); overflow-wrap: break-word;"
             >
               {{ record }}
@@ -777,7 +777,7 @@ async function runLookup() {
 
         <!-- DMARC -->
         <c-card>
-          <div mb-3 flex items-center justify-between>
+          <div mb-2 flex items-center justify-between>
             <span class="text-lg font-bold">
               DMARC Record
             </span>
@@ -789,7 +789,7 @@ async function runLookup() {
           <div
             v-if="emailResults.dmarc.raw && emailResults.dmarc.raw !== 'DNS lookup failed.' && emailResults.dmarc.raw !== 'No DMARC record found. Domain is unprotected against spoofing.'"
             flex items-start justify-between gap-2
-            class="mb-2 rounded p-2 text-xs font-mono"
+            class="mb-1 rounded p-1.5 px-2 text-xs font-mono"
             style="background: rgba(255,255,255,0.05); overflow-wrap: break-word;"
           >
             <span>{{ emailResults.dmarc.raw }}</span>
