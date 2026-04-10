@@ -3,7 +3,7 @@ const features = [
   { title: 'ARP + Ping Discovery', desc: 'Dual-method host detection catches devices that don\'t respond to ICMP, including IoT devices and firewalled endpoints.' },
   { title: 'Port Probing', desc: 'Parallel scan of common service ports (SSH, RDP, SMB, HTTP, printing, hypervisor, NAS) with 200ms timeout per port.' },
   { title: 'Vendor Identification', desc: 'MAC OUI lookup against the IEEE database identifies device manufacturers -- printers, switches, APs, IoT, and more.' },
-  { title: 'Device Classification', desc: 'Automatic typing based on open ports and vendor: Windows, Linux, Printer, Router, Switch/AP, Hypervisor, NAS, IoT, Mobile.' },
+  { title: 'Device Classification', desc: 'Automatic typing via hostname keywords, OUI vendor, and port fingerprinting. Right-click to manually override any device type.' },
   { title: 'Export', desc: 'Export scan results as CSV or HTML report. Right-click any device to copy IP, MAC, hostname, or launch RDP/SSH/browser.' },
   { title: 'Single File, No Install', desc: 'One exe, ~484 KB zipped. No installer, no admin rights needed, no dependencies beyond the .NET runtime.' },
 ];
@@ -40,7 +40,7 @@ const features = [
         Download for Windows (.zip)
       </a>
       <p style="margin-top: 10px; font-size: 12px; color: #a0a0a0;">
-        Windows 10/11 x64 &middot; ~484 KB &middot; Requires
+        v1.1.0 &middot; Windows 10/11 x64 &middot; ~484 KB &middot; Requires
         <a
           href="https://dotnet.microsoft.com/download/dotnet/8.0"
           target="_blank"
