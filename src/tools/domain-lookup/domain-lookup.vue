@@ -555,27 +555,6 @@ async function runLookup() {
           </div>
         </c-card>
 
-        <!-- Nameservers -->
-        <c-card v-if="whoisResult.nameservers?.length">
-          <div mb-3>
-            <span class="text-lg font-bold">
-              Nameservers
-            </span>
-          </div>
-          <div
-            v-for="(ns, i) in whoisResult.nameservers"
-            :key="i"
-            flex items-center justify-between
-            class="mb-1 rounded p-2 text-xs font-mono"
-            style="background: rgba(255,255,255,0.05)"
-          >
-            <span>{{ ns.ldhName }}</span>
-            <c-button circle variant="text" style="width:20px;height:20px;" @click="copyValue(ns.ldhName)">
-              <n-icon size="12" :component="copiedValue === ns.ldhName ? Check : Copy" />
-            </c-button>
-          </div>
-        </c-card>
-
         <!-- DNSSEC -->
         <c-card v-if="dnssec">
           <div mb-3 flex items-center justify-between>
@@ -689,6 +668,27 @@ async function runLookup() {
 
       <!-- RIGHT: Email DNS -->
       <div v-if="emailChecked || loading" class="grid grid-cols-1 gap-16px" style="align-content: start;">
+        <!-- Nameservers -->
+        <c-card v-if="whoisResult?.nameservers?.length">
+          <div mb-3>
+            <span class="text-lg font-bold">
+              Nameservers
+            </span>
+          </div>
+          <div
+            v-for="(ns, i) in whoisResult.nameservers"
+            :key="i"
+            flex items-center justify-between
+            class="mb-1 rounded p-2 text-xs font-mono"
+            style="background: rgba(255,255,255,0.05)"
+          >
+            <span>{{ ns.ldhName }}</span>
+            <c-button circle variant="text" style="width:20px;height:20px;" @click="copyValue(ns.ldhName)">
+              <n-icon size="12" :component="copiedValue === ns.ldhName ? Check : Copy" />
+            </c-button>
+          </div>
+        </c-card>
+
         <!-- MX -->
         <c-card>
           <div mb-3 flex items-center justify-between>
