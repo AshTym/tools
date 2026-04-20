@@ -1,10 +1,10 @@
 # killer-tools
 
-![killer-tools](./public/banner.png)
+![MSP Tools](./public/banner.png)
 
-A custom fork of [IT-Tools](https://github.com/CorentinTh/it-tools) with personalized branding, deployed at [killertools.net](https://killertools.net).
+A custom fork of [IT-Tools](https://github.com/CorentinTh/it-tools) with personalized branding.
 
-Built and maintained by [SteveTheKiller](https://thekiller.net).
+Built and maintained by Ash Tym.
 
 ## Contribute
 
